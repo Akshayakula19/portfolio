@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Sai Akshay Akula | Portfolio</title>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: 'Segoe UI', sans-serif; background: #f2f2f2; color: #333; }
+
+    nav {
+
+      background: #222; padding: 1em; position: sticky; top: 0; z-index: 10;
+
+      display: flex; justify-content: center; gap: 1.5em;
+
+    }
+
+    nav a, .tabs-nav button {
+
+      color: #fff; background: transparent; border: none;
+
+      text-decoration: none; font-weight: bold; font-size: 1em;
+
+      cursor: pointer;
+
+    }
+
+    nav a:hover, .tabs-nav button:hover { color: #00bcd4; }
+
+    .tab { display: none; }
+
+    .tab.active { display: block; }
+
+    header {
+
+      background: #00bcd4; color: white; padding: 4em 1em; text-align: center;
+
+    }
+
+    header h1 { font-size: 3em; }
+
+    header img {
+
+      width: 120px; height: 120px; border-radius: 50%; object-fit: cover;
+
+      margin-top: 1em; border: 4px solid white;
+
+    }
+
+    section { padding: 4em 2em; max-width: 1000px; margin: auto; }
+
+    .section-title {
+
+      font-size: 2em; margin-bottom: 1em; border-bottom: 2px solid #00bcd4;
+
+    }
+
+    .tabs-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1em; margin-top: 2em; }
+
+    .tabs-nav button.active { color: #00bcd4; border-bottom: 2px solid #00bcd4; }
+
+    .projects {
+
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em;
+
+    }
+
+    .card {
+
+      background: white; padding: 1em; border-radius: 8px;
+
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;
+
+      text-align: center;
+
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    .card img { width: 100%; max-height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 0.5em; }
+
+    .contact {
+
+      background: #222; color: white; padding: 2em 1em;
+
+    }
+
+    .contact-form {
+
+      display: flex; flex-direction: column; gap: 1em;
+
+      max-width: 600px; margin: 2em auto;
+
+    }
+
+    .contact-form input, .contact-form textarea {
+
+      padding: 1em; font-size: 1em; border: none; border-radius: 5px;
+
+    }
+
+    .contact-form button {
+
+      background-color: #00bcd4; color: white; border: none;
+
+      padding: 0.75em; border-radius: 5px; cursor: pointer; font-size: 1em;
+
+    }
+
+    .contact-form button:hover { background-color: #0097a7; }
+
+    .skills-grid {
+
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1.5em; text-align: center;
+
+    }
+
+    .skill-box {
+
+      background: white; padding: 1em; border-radius: 8px;
+
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;
+
+      display: flex; flex-direction: column; align-items: center;
+
+    }
+
+    .skill-box:hover { transform: translateY(-5px); }
+
+    .skill-icon img {
+
+      width: 40px; height: 40px; margin-bottom: 0.5em;
+
+    }
+
+    .skill-title { font-weight: bold; margin-bottom: 0.25em; }
+
+    .skill-percent { width: 100%; background: #ddd; border-radius: 5px; overflow: hidden; }
+
+    .skill-percent-inner { height: 10px; background: #00bcd4; }
+
+    footer { background: #00bcd4; color: white; text-align: center; padding: 1em; }
+
+  </style>
+
+  <script>
+
+    function toggleTab(tabId) {
+
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+
+      document.querySelector(`#${tabId}`).classList.add('active');
+
+      document.querySelectorAll('.tabs-nav button').forEach(btn => btn.classList.remove('active'));
+
+      event.target.classList.add('active');
+
+    }
+
+  </script>
+
+</head>
+
+<body>
+
+  <header>
+
+    <h1>Sai Akshay Akula</h1>
+
+    <p>Machine Learning Enthusiast | Developer | Tech Explorer</p>
+
+    <img src="Assets/Images/akshay.jpeg" alt="Profile Photo">
+
+    <div class="tabs-nav">
+
+      <button class="active" onclick="toggleTab('about')">About Me</button>
+
+      <button onclick="toggleTab('skills')">Skills</button>
+
+      <button onclick="toggleTab('projects')">Projects</button>
+
+      <button onclick="toggleTab('certificates')">Certificates</button>
+
+      <button onclick="toggleTab('education')">Education</button>
+
+      <button onclick="toggleTab('contact')">Contact</button>
+
+    </div>
+
+  </header>
+
+
+
+  <section id="about" class="tab active">
+
+  <h2 class="section-title">About Me</h2>
+
+  <p>I’m a passionate and driven Computer Science and Engineering undergraduate at Lovely Professional University. I specialize in Machine Learning, Artificial Intelligence, and Full Stack Development. With a hands-on approach to solving real-world problems, I thrive on building efficient and scalable software solutions.</p>
+
+  <p>My journey in tech has been powered by curiosity, community, and continuous learning. I actively pursue certifications, contribute to open-source, and create impactful projects. I'm seeking opportunities where I can learn, collaborate, and innovate.</p>
+
+  <a href="https://docs.google.com/document/d/19V_SK4648AoCMe9WEgWSEClYl8S05VeB/edit?usp=sharing&ouid=112891904509297545727&rtpof=true&sd=true" download style="display:inline-block;margin-top:1em;background:#00bcd4;color:white;padding:0.5em 1em;text-decoration:none;border-radius:4px;">Download CV</a>
+
+</section>
+
+
+
+  <section id="skills" class="tab">
+
+    <h2 class="section-title">Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/6132/6132222.png" alt="C++"></div><div class="skill-title">C++</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 90%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/226/226777.png" alt="Java"></div><div class="skill-title">Java</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 80%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript"></div><div class="skill-title">JavaScript</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 85%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/5968/5968350.png" alt="Python"></div><div class="skill-title">Python</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 88%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML/CSS"></div><div class="skill-title">HTML/CSS</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 80%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/919/919836.png" alt="Ubuntu"></div><div class="skill-title">Ubuntu</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 70%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub"></div><div class="skill-title">GitHub</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 75%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="React"></div><div class="skill-title">React</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 70%"></div></div></div>
+
+      <div class="skill-box"><div class="skill-icon"><img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="SQL"></div><div class="skill-title">SQL</div><div class="skill-percent"><div class="skill-percent-inner" style="width: 75%"></div></div></div>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="projects" class="tab">
+
+    <h2 class="section-title">Projects</h2>
+
+    <div class="projects">
+
+      <div class="card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712035.png" alt="AI Chatbot">
+
+        <h3>AI Chat-Bot</h3>
+
+        <p>An intelligent chatbot built using T5 and BERT models to understand user intent and generate human-like responses.</p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/2038/2038854.png" alt="Grocery Website">
+
+        <h3>Grocery E-commerce Website</h3>
+
+        <p>A responsive website with cart, payment, and user login functionality, developed using HTML, CSS, JS, and Firebase.</p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" alt="Portfolio">
+
+        <h3>Portfolio Website</h3>
+
+        <p>This very website, showcasing my projects, certifications, and skills with an interactive and responsive layout.</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="certificates" class="tab">
+
+    <h2 class="section-title">Certificates</h2>
+
+    <div class="projects">
+
+      <div class="card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="Networking Certificate">
+
+        <h3>The Bits and Bytes of Computer Networking</h3>
+
+        <p>Coursera — <a href="https://coursera.org/share/afebdff0209aca41acbd6f3aa39390d8" target="_blank">View Certificate</a></p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="Big Data Certificate">
+
+        <h3>Introduction to Big Data</h3>
+
+        <p>Coursera — <a href="https://coursera.org/share/5205c09efbeeacb3c13920197b323d01" target="_blank">View Certificate</a></p>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="Leadership Certificate">
+
+        <h3>Leadership through Social Influence</h3>
+
+        <p>Coursera — <a href="https://coursera.org/share/a8ebc63c1210284c72f0642ff72c9c86" target="_blank">View Certificate</a></p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section id="education" class="tab">
+
+    <h2 class="section-title">Education</h2>
+
+    <p><strong>Lovely Professional University</strong><br />B.Tech in Computer Science and Engineering — CGPA: 5.86 (2022–2026)</p>
+
+    <p><strong>Alphores Junior College</strong><br />Intermediate in MPC — 69% (2020–2022)</p>
+
+    <p><strong>St. Johns High School</strong><br />Matriculation — 97% (2013–2020)</p>
+
+  </section>
+
+
+
+  <section id="contact" class="tab contact">
+
+    <h2 class="section-title" style="color:white">Contact</h2>
+
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message!');">
+
+      <input type="text" placeholder="Your Name" required>
+
+      <input type="email" placeholder="Your Email" required>
+
+      <input type="text" placeholder="Phone Number">
+
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+
+    </form>
+
+  </section>
+
+
+
+  <footer>
+
+    Made with ❤️ by Sai Akshay Akula | &copy; 2025
+
+  </footer>
+
+</body>
+
+</html>
